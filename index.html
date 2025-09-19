@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 HBD, Kak Amelya 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { width: 6px; height: 6px; left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: 0.5s; }
+        .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: 1.5s; }
+        .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: 2.5s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #fff;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .birthday-scene {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px 20px;
+            margin: 30px auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.2); /* transparan biar keliatan blur */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* buat Safari */
+            animation: fadeInUp 1.2s ease-out 0.3s both;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .birthday-scene::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .family {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .person {
+            text-align: center;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .person:nth-child(1) { animation-delay: 0s; }
+        .person:nth-child(2) { animation-delay: 0.3s; }
+        .person:nth-child(3) { animation-delay: 0.6s; }
+        .person:nth-child(4) { animation-delay: 0.9s; }
+        
+        .person-icon {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .person-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        }
+        
+        .birthday-girl {
+            transform: scale(1.2);
+            position: relative;
+        }
+        
+        .birthday-girl::after {
+            content: '👑';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: rotate 2s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: translateX(-50%) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg); }
+        }
+        
+        .cake {
+            text-align: center;
+            margin: 40px 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .cake-emoji {
+            font-size: clamp(4rem, 10vw, 6rem);
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        .age {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: #e74c3c;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .balloons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .balloon {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            animation: float-balloon 3s ease-in-out infinite;
+        }
+        
+        .balloon:nth-child(1) { animation-delay: 0s; }
+        .balloon:nth-child(2) { animation-delay: 0.5s; }
+        .balloon:nth-child(3) { animation-delay: 1s; }
+        .balloon:nth-child(4) { animation-delay: 1.5s; }
+        .balloon:nth-child(5) { animation-delay: 2s; }
+        
+        @keyframes float-balloon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .gifts-section {
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .gifts-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .gifts {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .gift {
+            background: linear-gradient(145deg, #667eea, #764ba2);
+            border-radius: 20px;
+            padding: 30px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            max-width: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gift::before {
+            content: '🎁';
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        .gift:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gift-label {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .gift-content {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .gift-message {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .love-animation {
+            font-size: 2rem;
+            animation: heartBeat 1s ease-in-out infinite;
+        }
+        
+        /* Animasi untuk Kado 1 - Health & Happiness */
+        .health-animation {
+            font-size: 1.5rem;
+            animation: healthGlow 2s ease-in-out infinite;
+            margin: 15px 0;
+        }
+        
+        @keyframes healthGlow {
+            0%, 100% { 
+                transform: scale(1);
+                filter: brightness(1);
+            }
+            50% { 
+                transform: scale(1.1);
+                filter: brightness(1.2);
+            }
+        }
+        
+        /* Animasi untuk Kado 2 - Success */
+        .success-animation {
+            font-size: 1.5rem;
+            animation: successSpin 3s linear infinite;
+            margin: 15px 0;
+        }
+        
+        @keyframes successSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+        
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .firework {
+            position: absolute;
+            font-size: 2rem;
+            animation: explode 1s ease-out;
+        }
+        
+        @keyframes explode {
+            0% { transform: scale(0) rotate(0deg); opacity: 1; }
+            100% { transform: scale(2) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .birthday-scene {
+                padding: 30px 15px;
+                margin: 20px auto;
+            }
+            
+            .family {
+                gap: 15px;
+            }
+            
+            .gifts {
+                gap: 20px;
+            }
+            
+            .gift {
+                min-width: 160px;
+                padding: 25px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gifts {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .gift {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        .close-gift {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .close-gift:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Happy Birthday</h1>
+            <h2 class="subtitle">Kak Amelya Mia</h2>
+        </div>
+
+        <div class="birthday-scene">
+            <div class="family">
+                <div class="person">
+                    <span class="person-icon">👨</span>
+                    <div class="person-name">Papa Amel</div>
+                </div>
+                <div class="person">
+                    <span class="person-icon">👩</span>
+                    <div class="person-name">Mama Amel</div>
+                </div>
+                <div class="person birthday-girl">
+                    <span class="person-icon">👩‍🦱</span>
+                    <div class="person-name">Amel</div>
+                </div>
+                <div class="person">
+                    <span class="person-icon">👧</span>
+                    <div class="person-name">Manja Okta</div>
+                </div>
+            </div>
+
+            <div class="cake">
+                <span class="cake-emoji">🎂</span>
+                <div class="age">29 Years</div>
+            </div>
+
+            <div class="balloons">
+                <span class="balloon">🎈</span>
+                <span class="balloon">🎈</span>
+                <span class="balloon">🎈</span>
+                <span class="balloon">🎈</span>
+                <span class="balloon">🎈</span>
+            </div>
+
+            <div class="gifts-section">
+                <h3 class="gifts-title">Choose the gift, okay? 🎁</h3>
+                <div class="gifts">
+                    <div class="gift" id="gift1">
+                        <div class="gift-label">First Gift</div>
+                        <div class="gift-content">
+                            <div class="gift-message">
+                                🌟🚀 Always be healthy and always happy. Success in this world and the hereafter too, Kak Amell!  🌈💖
+                            </div>
+                            <div class="health-animation">💚🌟💚🌟💚🌟💚🌟💚</div>
+                            <button class="close-gift" onclick="closeGift('gift1')">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="gift" id="gift2">
+                        <div class="gift-label">Second Gift</div>
+                        <div class="gift-content">
+                            <div class="gift-message">
+                                💖🎈 Semakin GEMOIII, and loving his mom and dad your! 🌟✨
+                            </div>
+                            <div class="success-animation">🏆⭐🎯💎🌟</div>
+                            <button class="close-gift" onclick="closeGift('gift2')">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="gift" id="gift3">
+                        <div class="gift-label">Third Gift</div>
+                        <div class="gift-content">
+                            <div class="gift-message">
+                                💕Last and most important, makin sayang samo urang muah HAHAHA 😂😍🙏
+                            </div>
+                            <div class="love-animation">💖💕💗💖💕💗💖💕💗</div>
+                            <button class="close-gift" onclick="closeGift('gift3')">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fireworks" id="fireworks"></div>
+
+    <script>
+        // Gift opening functionality
+        document.querySelectorAll('.gift').forEach(gift => {
+            gift.addEventListener('click', function(e) {
+                // Jangan buka kado jika yang diklik adalah tombol tutup
+                if (e.target.classList.contains('close-gift')) {
+                    return;
+                }
+                
+                if (this.classList.contains('opened')) return;
+                
+                const content = this.querySelector('.gift-content');
+                content.style.display = 'block';
+                this.classList.add('opened');
+                
+                // Create fireworks
+                createFireworks();
+                
+                // Play celebration sound (visual feedback)
+                this.style.background = 'linear-gradient(145deg, #ff6b6b, #4ecdc4)';
+            });
+        });
+
+        function closeGift(giftId) {
+            const gift = document.getElementById(giftId);
+            const content = gift.querySelector('.gift-content');
+            content.style.display = 'none';
+            gift.classList.remove('opened');
+            gift.style.background = 'linear-gradient(145deg, #667eea, #764ba2)';
+        }
+
+        function createFireworks() {
+            const fireworks = document.getElementById('fireworks');
+            const colors = ['🎆', '✨', '💥', '🎇', '⭐'];
+            
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.textContent = colors[Math.floor(Math.random() * colors.length)];
+                    firework.style.left = Math.random() * 100 + 'vw';
+                    firework.style.top = Math.random() * 100 + 'vh';
+                    fireworks.appendChild(firework);
+                    
+                    setTimeout(() => {
+                        firework.remove();
+                    }, 1000);
+                }, i * 100);
+            }
+        }
+
+        // Auto fireworks every 30 seconds
+        setInterval(createFireworks, 30000);
+
+        // Initial welcome fireworks
+        setTimeout(createFireworks, 2000);
+
+        // Add more interactive elements
+        document.querySelectorAll('.balloon').forEach((balloon, index) => {
+            balloon.addEventListener('click', function() {
+                this.style.animation = 'none';
+                this.style.transform = 'translateY(-100vh) rotate(720deg)';
+                this.style.transition = 'all 2s ease-in';
+                
+                setTimeout(() => {
+                    this.style.animation = 'float-balloon 3s ease-in-out infinite';
+                    this.style.transform = '';
+                    this.style.transition = '';
+                }, 3000);
+                
+                createFireworks();
+            });
+        });
+
+        // Cake click interaction
+        document.querySelector('.cake').addEventListener('click', function() {
+            this.style.animation = 'pulse 0.5s ease-in-out';
+            createFireworks();
+            
+            setTimeout(() => {
+                this.style.animation = 'pulse 2s ease-in-out infinite';
+            }, 500);
+        });
+
+        // Add birthday song simulation
+        let isPlaying = false;
+        document.querySelector('.title').addEventListener('click', function() {
+            if (isPlaying) return;
+            isPlaying = true;
+            
+            const notes = ['🎵', '🎶', '🎼', '🎤'];
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const note = document.createElement('div');
+                    note.style.position = 'fixed';
+                    note.style.left = Math.random() * 100 + 'vw';
+                    note.style.top = '100vh';
+                    note.style.fontSize = '2rem';
+                    note.style.animation = 'float 3s ease-out forwards';
+                    note.style.zIndex = '1001';
+                    note.textContent = notes[Math.floor(Math.random() * notes.length)];
+                    document.body.appendChild(note);
+                    
+                    setTimeout(() => {
+                        note.remove();
+                    }, 3000);
+                }, i * 200);
+            }
+            
+            setTimeout(() => {
+                isPlaying = false;
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
